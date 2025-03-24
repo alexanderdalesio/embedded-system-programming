@@ -25,18 +25,19 @@ int main(void)
 		// Only execute test sequencey if Pin 7 is HIGH
 		if (PIND & (1 << PD7))
 		{
-            // Count down 9-0
+            		// Count down 9-0
 			count++;
 						
-            // Reset counter once it reaches 11 (so it counts from 0-10)
+           		 // Reset counter once it reaches 11 (so it counts from 0-10)
 			if (count == 11)
 				count = 0;
 		}
-        // Turn off all segments if Pin 7 is LOW
+	        // Turn off all segments if Pin 7 is LOW
 		else if (!(PIND & (1 << PD7)))
 		{
 			count = 10;
 		}
+
 		
 		// Logic for turning on segments
 		switch (count)
@@ -91,7 +92,7 @@ int main(void)
 				_delay_ms(500.0);
 				break;
 
-            case 10:
+           		case 10:
 				PORTA = 0x00;
 				_delay_ms(500.0);
 				break;
